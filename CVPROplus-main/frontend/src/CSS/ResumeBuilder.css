@@ -1,0 +1,86 @@
+/* ✅ Ensure buttons are aligned with spacing */
+.button-controls {
+  display: flex;
+  flex-direction: row; /* ✅ Ensures buttons appear in a row on large screens */
+  justify-content: center; /* ✅ Centers buttons */
+  align-items: center;
+  gap: 20px; /* ✅ Space between buttons */
+  margin-top: 20px;
+  width: 100%;
+  flex-wrap: wrap; /* ✅ Allows wrapping on smaller screens */
+}
+
+/* ✅ Save and Export Button Styling */
+.save-button,
+.export-button {
+  padding: 12px 24px; /* ✅ Slightly larger padding for better clickability */
+  min-width: 160px; /* ✅ Ensures buttons are uniform */
+  text-align: center;
+  background-color: #007BFF; /* ✅ Save button color */
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s, transform 0.2s;
+  margin-top: 15px;
+  margin-left: 85px; /* ✅ Ensures equal spacing around buttons */
+  margin-bottom: 0;
+}
+
+/* ✅ Export Button Specific Color */
+.export-button {
+  background-color: #28A745; /* ✅ Green color */
+}
+
+/* ✅ Hover effect */
+.save-button:hover:not(:disabled),
+.export-button:hover:not(:disabled) {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+/* ✅ Disabled Button Styling */
+.save-button.disabled, 
+.export-button.disabled {
+  background-color: #A0A0A0;
+  color: #666666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ✅ Center align the error message */
+.error-message {
+  color: red;
+  font-size: 14px;
+  display: block; /* ✅ Ensures full-width control */
+  text-align: center; /* ✅ Centers the text */
+  width: 100%; /* ✅ Ensures it spans full width */
+  margin: 10px auto; /* ✅ Adds spacing and centers it */
+}
+
+
+/* ✅ RESPONSIVE FIXES */
+
+/* 📱 For screens smaller than 600px (mobile devices) */
+@media (max-width: 600px) {
+  .button-controls {
+    flex-direction: column; /* ✅ Stack buttons vertically */
+    align-items: center; /* ✅ Center buttons */
+    gap: 10px; /* ✅ Adds more spacing between buttons */
+  }
+
+  .save-button,
+  .export-button {
+    width: 100%; /* ✅ Makes buttons full-width */
+    max-width: 200px; /* ✅ Prevents them from being too wide */
+  }
+}
+
+/* 📱 For tablets (screens smaller than 900px) */
+@media (max-width: 900px) {
+  .button-controls {
+    gap: 15px; /* ✅ Reduce space between buttons slightly */
+  }
+}

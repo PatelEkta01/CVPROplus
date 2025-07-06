@@ -1,0 +1,205 @@
+
+.resume-preview-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #e5e5e5;
+    overflow-y: auto;
+  }
+  
+  /* Each individual A4-sized page (simulated) */
+  .resume-page {
+    width: 210mm;
+    height: 297mm;
+    padding: 20mm 15mm;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-sizing: border-box;
+    position: relative;
+    overflow: auto; 
+    break-after: page;
+    break-inside: auto;
+  }
+  
+  /* Prevent trailing space from adding overflow */
+  .resume-page::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+  }
+  
+  /* Contact Links */
+  .contact-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-link:hover {
+    text-decoration: underline;
+    color: #07448f;
+  }
+  
+  /* Resume Header */
+  .resume-header {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #000;
+    margin-bottom: 10px;
+  }
+  
+  .resume-header h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+  
+  .resume-header p {
+    font-size: 14px;
+    text-align: center;
+    margin: 5px 0;
+  }
+  
+  /* Section Styling */
+  .resume-section {
+    width: 100%;
+    margin-bottom: 20px;
+    page-break-inside: auto;
+    break-inside: auto;
+  }
+  
+  /* Section Title with Lines */
+  .section-lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+  }
+  
+  .section-lines::before,
+  .section-lines::after {
+    content: "";
+    flex-grow: 1;
+    height: 1px;
+    background-color: #000;
+    margin: 0 12px;
+  }
+  
+  /* Skills List */
+  .skills-list {
+    list-style-type: disc;
+    padding-left: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    width: 100%;
+  }
+  
+  .skills-list li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .skills-columns {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .skills-column {
+    width: 48%;
+  }  
+  
+  /* Projects Section */
+  .project-item {
+    margin-bottom: 15px;
+  }
+  
+  .project-name {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .task-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+  
+  .task-list li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    /* ✅ DO NOT restrict page breaking here */
+  }
+  
+  /* Education Section */
+  .education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    font-weight: bold;
+  }
+  
+  .education-name {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .graduation-date {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .education-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .course-name,
+  .education-location {
+    font-style: italic;
+  }
+  
+  /* Print optimization */
+  @media print {
+    .resume-preview-wrapper {
+      padding: 0;
+      background: white;
+    }
+  
+    .resume-page {
+      width: 210mm;
+      height: 297mm;
+      padding: 20mm 15mm;
+      margin: 0;
+      box-shadow: none;
+      page-break-after: always;
+      page-break-inside: auto;
+      break-after: page;
+      break-inside: auto;
+      overflow: visible;
+    }
+  
+    .resume-section {
+      page-break-inside: auto;
+      break-inside: auto;
+    }
+  }
+  

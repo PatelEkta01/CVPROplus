@@ -1,0 +1,240 @@
+/* Outer wrapper that centers content and allows vertical scroll */
+.resume-preview-prof-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #e5e5e5;
+    overflow-y: auto;
+}
+
+/* Each individual A4-sized page (simulated) */
+.resume-page-prof {
+    width: 210mm;
+    height: 297mm;
+    padding: 10mm; 
+    margin-bottom: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    position: relative;
+    overflow: auto; /* Allow content to flow naturally */
+    break-after: page;
+    break-inside: auto;
+}
+
+/* Prevent trailing space from adding overflow */
+.resume-page-prof::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.resume-preview-prof {
+    font-family: Arial, sans-serif;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Name Styling */
+.resume-header-prof h1 {
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+/* Contact Information */
+.resume-header-prof {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.resume-header-prof p {
+    font-size: 14px;
+    color: #555;
+    margin: 3px 0;
+}
+
+/* Contact Links */
+.contact-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+    color: #0f5bb5;
+}
+
+/* Section Formatting */
+.resume-section-prof {
+    margin-bottom: 20px;
+    font-size: 15px;
+    padding-top: 15px;
+}
+
+/* Section Titles */
+.section-title-prof {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+/* Work Experience Section */
+.work-experience-item-prof {
+    margin-bottom: 15px;
+}
+
+.work-company-name-prof {
+    font-size: 15px;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: left;
+}
+
+.work-dates-prof {
+    font-size: 14px;
+    color: #555;
+    text-align: right;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.work-header-prof {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #555;
+}
+
+.work-tasks-prof {
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+.work-tasks-prof li {
+    list-style-type: disc;
+    margin-bottom: 5px;
+}
+
+/* Skills Section */
+.skills-list-prof {
+    list-style-type: disc;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 14px;
+    text-align: left;
+}
+
+.skills-list-prof li {
+    padding: 3px 0;
+}
+
+/* Projects Section */
+.project-item-prof {
+    margin-bottom: 10px;
+}
+
+.project-name-prof {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.task-list-prof {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 14px;
+}
+
+/* Education Section */
+.education-item-prof {
+    margin-bottom: 10px;
+}
+
+.education-header-prof {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.education-details-prof {
+    font-size: 14px;
+    color: #555;
+    font-style: italic;
+    display: flex;
+    justify-content: space-between;
+}
+
+.course-name-prof {
+    flex: 1;
+    text-align: left;
+}
+
+.education-location-prof {
+    flex: 1;
+    text-align: right;
+}
+
+.work-location-prof {
+    flex: 1;
+    text-align: right;
+}
+
+/* Print Handling */
+@media print {
+    .resume-preview-prof-wrapper {
+        padding: 20px;
+        background: #fff;
+    }
+    .resume-page-prof {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 10mm;
+        box-shadow: none;
+        page-break-after: always;
+        page-break-inside: avoid;
+        overflow: visible;
+    }
+    .resume-section-prof {
+        page-break-inside: avoid;
+    }
+}
+
+/* RESPONSIVE FIXES */
+@media (max-width: 768px) {
+    .resume-preview-prof-wrapper {
+        padding: 15px;
+        width: 100%;
+        height: auto;
+    }
+    .resume-header-prof {
+        align-items: flex-start;
+    }
+    .resume-header-prof h1 {
+        font-size: 20px;
+    }
+    .section-title-prof {
+        font-size: 14px;
+    }
+    .skills-list-prof {
+        grid-template-columns: 1fr;
+    }
+    .education-header-prof,
+    .education-details-prof {
+        flex-direction: column;
+        text-align: left;
+    }
+}

@@ -1,0 +1,195 @@
+/* ✅ Editor Container - Set Height and Overflow for Scrollable Content */
+.editor-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #1a1a1a;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  height: 99vh; /* ✅ Keeps within screen height */
+  margin: 0 auto;
+  overflow-y: auto; /* ✅ Entire editor section is scrollable */
+  gap: 1.5rem;
+  border: 1px solid #2d3748;
+  position: relative; /* Ensures proper layout */
+}
+
+/* ✅ Make the main content scrollable within the container */
+.editor-content {
+  flex: 1;
+  overflow-y: auto; /* ✅ Enables scroll for editor content */
+  padding-right: 10px;
+  max-height: calc(100vh - 5rem); /* Ensures content area height fits the screen */
+}
+
+/* ✅ Adjusted Personal Details Section */
+.editor-section {
+  width: 100%;
+  padding: 1.5rem;
+  background: #525457;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #4a5568;
+  transition: all 0.2s ease;
+  overflow-y: visible; /* Ensures sections don't scroll individually */
+}
+
+/* ✅ Section Titles */
+.editor-section h2 {
+  font-size: 1.5rem;
+  color: #f7fafc;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  border-bottom: 2px solid #4a5568;
+  padding-bottom: 0.75rem;
+}
+
+/* ✅ Form Groups - Ensures fields within a section stay aligned */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 10px;
+}
+
+/* ✅ Adjusted Personal Details Section */
+.personal-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-between;
+}
+
+.personal-details .form-group {
+  flex: 1;
+  min-width: 280px;
+}
+
+/* ✅ Ensures LinkedIn stays optional and aligned */
+.optional-field {
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* ✅ Form Input Styles */
+ input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #444;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #333;
+  color: #fff;
+  resize: none; /* Prevents excessive resizing */
+}
+
+/* ✅ Limit height for large text areas */
+textarea {
+  min-height: 80px;
+  max-height: 150px;
+}
+
+/* ✅ Input Focus */
+textarea:focus,
+.form-group input:focus {
+  outline: none;
+  border-color: #1a8c4a;
+  background-color: #3a3a3a;
+}
+
+/* ✅ Validation Error Messages */
+.validation-error {
+  color: #ff6961;
+  font-style: italic;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* ✅ Character Counter */
+.char-count {
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* ✅ Address Field Character Limit */
+.address-field .char-count {
+  text-align: right;
+  color: #ccc;
+  font-size: 0.85rem;
+}
+
+/* ✅ Buttons */
+.editorbutton {
+  padding: 10px 18px;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: 1px solid #777;
+  background-color: #444;
+  color: #fff;
+}
+
+button:hover {
+  background-color: #555;
+}
+
+/* ✅ Add Buttons */
+.add-skill, .add-education, .add-experience, .add-task {
+  background-color: #e0e0e0;
+  color: #000;
+  border: none;
+  margin-top: 10px;
+}
+
+.add-skill:hover, .add-education:hover, .add-experience:hover, .add-task:hover {
+  background-color: #f5f5f5;
+}
+
+/* ✅ Remove Buttons */
+.remove-skill, .remove-education, .remove-experience, .remove-task {
+  background-color: #444;
+  border: 1px solid #777;
+}
+
+.remove-skill:hover, .remove-education:hover, .remove-experience:hover, .remove-task:hover {
+  background-color: #555;
+}
+
+/* ✅ Skills Section */
+.skills-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+  margin-top: 15px;
+}
+
+/* ✅ Task Input */
+.task-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* ✅ Responsive Fixes */
+@media (max-width: 768px) {
+  .editor-container {
+    height: 100vh;
+    padding: 1rem;
+  }
+
+  .editor-content {
+    max-height: 80vh;
+  }
+  
+  .personal-details {
+    flex-direction: column;
+  }
+}
